@@ -21,6 +21,7 @@ services:
       dockerfile: Dockerfile
     container_name: springboot_app
     environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://database-1.chui4gsumgdj.ap-northeast-2.rds.amazonaws.com:3306/Pocket4Cut
       SPRING_DATASOURCE_USERNAME: jiinhong
       SPRING_DATASOURCE_PASSWORD: PJHaws!!!
     ports:
