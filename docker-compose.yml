@@ -4,7 +4,7 @@ services:
     image: mysql:8.0
     container_name: mysql_db
     environment:
-      MYSQL_DATABASE: jiinhong
+      MYSQL_DATABASE: Pocket4Cut
       MYSQL_USER: jiinhong
       MYSQL_PASSWORD: PJHaws!!!
     ports:
