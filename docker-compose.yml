@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_DATABASE: jiinhong
+      MYSQL_USER: jiinhong
+      MYSQL_PASSWORD: PJHaws!!!
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - springboot-network
+
+  app:
+    image: pocket4cut_app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot_app
+    environment:
+      SPRING_DATASOURCE_USERNAME: jiinhong
+      SPRING_DATASOURCE_PASSWORD: PJHaws!!!
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - springboot-network
+
+networks:
+  springboot-network:
+
+volumes:
+  db_data:
+
